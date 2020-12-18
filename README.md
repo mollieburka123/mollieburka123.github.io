@@ -1,14 +1,23 @@
-## Welcome to GitHub Pages
+## Welcome to my R Portfolio!
 
-You can use the [editor on GitHub](https://github.com/mollieburka123/mollieburka123.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### Hi, I'm Mollie.
 
-Hi there putting in new content here!!
+I’m a born and raised New Orleanian currently displaced in Washington, D.C. I love telling stories, enjoying good food, the font Monserrat, and discovering upcoming artists on Spotify. I currently work as a Project Manager and Marketing/Outreach Specialist for an upcoming software company called Uncommon Good. I recently graduated Cum Laude from The George Washington University in 2020 with a BA in Communication and a minor in Journalism and Mass Communication. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Learn more about my experience by visiting my professional portfolio here. 
 
-### Markdown
+### Biden Transition Assignment 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+In this assignment, we were asked to scrape information from Biden's White House staff member and agency appointees website to keep track of changes made. 
+
+Click here for the finished product. 
+
+### Impeachment Assignment
+
+This assignment asked that we analyze the raw data on House Democrats' opinions and behaviors towards a Trump impeachment. 
+
+Click here to access that code and finished product. 
+
 
 ```markdown
 Syntax highlighted code block
