@@ -10,10 +10,10 @@ Learn more about my experience by visiting [my professional portfolio](https://w
 
 This assignment asked that we analyze the raw data on House Democrats' opinions and behaviors towards a Trump impeachment. 
 
-[Click here](mollieburka123.github.io/Impeachment Analysis/index.html) to access that code and finished product. 
+[Click here](https://mollieburka123.github.io/Impeachment Analysis/index.html) to access that code and finished product. 
 
 ### Biden Transition Assignment 
 
 In this assignment, we were asked to scrape information from Biden's White House staff member and agency appointees website to keep track of changes made. 
 
-[Click here](mollieburka123.github.io/BidenTransition/) for the finished product. 
+[Click here](https://mollieburka123.github.io/BidenTransition/) for the finished product. 
