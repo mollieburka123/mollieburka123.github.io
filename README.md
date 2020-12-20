@@ -22,3 +22,5 @@ In this assignment, we were asked to scrape information from Biden's White House
 
 This assignment asked us to use Flexdashboard to make a faster and more interactive way to see the data from Biden's transition website. 
 
+[Click here](https://mollieburka123.github.io/Biden-Transition-Analysis.html) to view the flexdashboard. 
+
