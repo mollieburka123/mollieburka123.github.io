@@ -17,3 +17,8 @@ This assignment asked that we analyze the raw data on House Democrats' opinions 
 In this assignment, we were asked to scrape information from Biden's White House staff member and agency appointees website to keep track of changes made. 
 
 [Click here](https://mollieburka123.github.io/BidenTransition/) for the finished product. 
+
+### Transition Tracker
+
+This assignment asked us to use Flexdashboard to make a faster and more interactive way to see the data from Biden's transition website. 
+

@@ -1,0 +1,92 @@
+---
+title: "Biden Transition Analysis"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(scales)
+library(gt)
+library(kableExtra)
+options(dplyr.summarise.inform = FALSE)
+
+source("03_compare_current_with_previous.R")
+
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Agency Review Teams 
+
+```{r}
+
+newnames %>%
+  gt() %>%
+  tab_header(
+    title = "New Names from the Agency Review Team"
+  ) %>%
+  cols_label(
+    name = "Name",
+    agency = "Agency",
+    on_multiple_teams = "On Multiple Teams", 
+    source_of_funding = "Source Of Funding",
+    most_recent_employment = "Most Recent Employment"
+  )%>%
+  cols_hide(
+    columns = vars(
+      team_lead, idstring, namestring)
+  )
+  
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Agency Review Teams Growth 
+
+```{r}
+agencycount_compare %>%
+  filter(change > 0)%>%
+  gt() %>%
+  tab_header(
+    title = "Total People Appointed to Each Agency Team & Change from Previous"
+  ) %>%
+    cols_label(
+      agency = "Agency",
+      current_count = "Current Count",
+      previous_count = "Previous Count",
+      change = "Change"
+    )
+
+
+```
+
+### White House Senior Staff
+
+```{r}
+
+newstaff_names%>%
+  gt() %>%
+  tab_header(
+    title = "New Names From Senior Staff Lists"
+  ) %>%
+  cols_label(
+    name = "Name",
+    title = "Title"
+    ) %>%
+  cols_hide(
+    columns = vars(
+      link, idstring)
+    )
+
+```
+
