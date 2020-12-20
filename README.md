@@ -4,7 +4,7 @@
 
 I’m a born and raised New Orleanian currently displaced in Washington, D.C. I love telling stories, enjoying good food, the font Monserrat, and discovering upcoming artists on Spotify. I currently work as a Project Manager and Marketing/Outreach Specialist for an upcoming software company called Uncommon Good. I recently graduated Cum Laude from The George Washington University in 2020 with a BA in Communication and a minor in Journalism and Mass Communication. 
 
-Learn more about my experience by visiting my professional portfolio here. 
+Learn more about my experience by visiting [my professional portfolio]https://www.molliewormser.com/ here. 
 
 ### Impeachment Assignment
 
