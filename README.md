@@ -10,7 +10,7 @@ Learn more about my experience by visiting [my professional portfolio](https://w
 
 This assignment asked that we analyze the raw data on House Democrats' opinions and behaviors towards a Trump impeachment. 
 
-[Click here](https://mollieburka123.github.io/Impeachment Analysis/index.html) to access that code and finished product. 
+[Click here](https://mollieburka123.github.io/ImpeachmentAnalysis) to access that code and finished product. 
 
 ### Biden Transition Assignment 
 
