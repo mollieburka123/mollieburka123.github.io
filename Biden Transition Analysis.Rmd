@@ -2,32 +2,29 @@
 title: "Biden Transition Analysis"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
+    orientation: rows
     vertical_layout: fill
+    theme: cerulean
+    
 ---
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
-library(tidyverse)
-library(lubridate)
-library(janitor)
-library(scales)
-library(gt)
-library(kableExtra)
-options(dplyr.summarise.inform = FALSE)
-
-source("03_compare_current_with_previous.R")
 
 ```
 
 
-Column {data-width=650}
+
+Agency Review Teams
+=========================================
+To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name. 
+
+Row {data-width=650}
 -----------------------------------------------------------------------
 
-### Agency Review Teams 
+### Agency Review Teams  
 
 ```{r}
-
 newnames %>%
   gt() %>%
   tab_header(
@@ -44,14 +41,19 @@ newnames %>%
     columns = vars(
       team_lead, idstring, namestring)
   )
-  
 
 ```
 
-Column {data-width=350}
+
+
+Agency Review Teams Changes 
+========================================
+To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name. 
+
+Row {data-width=350}
 -----------------------------------------------------------------------
 
-### Agency Review Teams Growth 
+### Agency Review Teams Changes
 
 ```{r}
 agencycount_compare %>%
@@ -67,26 +69,29 @@ agencycount_compare %>%
       change = "Change"
     )
 
-
 ```
+
+White House Senior Staff 
+========================================
+To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name. 
 
 ### White House Senior Staff
 
 ```{r}
+stafftotal_current <- staff_data_current %>%
+  tally(n= "Total People Currently Named to WH Senior Staff")
 
-newstaff_names%>%
+
+stafftotal_previous <- staff_data_previous %>%
+  tally(n = "Total People Previously Named to WH Senior Staff")
+
+staffcountcompare <- merge(stafftotal_current, stafftotal_previous, all=TRUE)
+staffcountcompare
+
+staffcountcompare %>%
   gt() %>%
   tab_header(
-    title = "New Names From Senior Staff Lists"
-  ) %>%
-  cols_label(
-    name = "Name",
-    title = "Title"
-    ) %>%
-  cols_hide(
-    columns = vars(
-      link, idstring)
-    )
-
+    title = "Total People Currently Named to Senior Staff vs. Previous Count"
+  )
 ```
 
