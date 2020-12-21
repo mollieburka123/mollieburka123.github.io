@@ -1,47 +1,78 @@
 ---
 title: "Biden Transition Analysis"
+date: December 20, 2020
 output: 
   flexdashboard::flex_dashboard:
-    orientation: rows
-    vertical_layout: fill
+    vertical_layout: scroll
     theme: cerulean
-    
 ---
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(plotly)
+library(DT)
+library(wrangle)
+library(tidyverse)
+
+newnames <- readRDS("~/GITREPSITORY/gw_r_assignment_transition/processed_data/newnames.rds")
+staff_data_scraped <- readRDS("~/GITREPSITORY/gw_r_assignment_transition/processed_data/staff_data_scraped.rds")
 
 ```
 
+Agency Review Teams  {.tabset}
+===============================================================================================================
+To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name.
 
+Row {data-height=1000}
+---------------------------------------------------------------------------------------------------------------
 
-Agency Review Teams
-=========================================
-To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name. 
+### Agency Review Teams
 
-Row {data-width=650}
------------------------------------------------------------------------
+```{r, Include = FALSE}
 
-### Agency Review Teams  
+newnames_table1 <-newnames %>%
+  select(name, agency, team_lead, on_multiple_teams, most_recent_employment, source_of_funding, -idstring, -namestring)%>%
+  rename(
+    'Name' = name,
+    'Agency' = agency,
+    'Team Lead' = team_lead,
+    'On Multiple Teams' = on_multiple_teams,
+    'Most Recent Employment' = most_recent_employment, 
+    'Source of Funding' = source_of_funding)
 
-```{r}
+  datatable(newnames_table1,
+          rownames = FALSE, 
+          filter = "top", 
+          extensions = 'Buttons',
+          options = list(searchHighlight = TRUE, bpaginate = FALSE, dom = 'Bfrtip',
+                         buttons = c('copy', 'csv', 'excel', 'print')))
+ 
+```
 
-newnames %>%
-  gt() %>%
-  tab_header(
-    title = "New Names from the Agency Review Team"
-  ) %>%
-  cols_label(
-    name = "Name",
-    agency = "Agency",
-    on_multiple_teams = "On Multiple Teams", 
-    source_of_funding = "Source Of Funding",
-    most_recent_employment = "Most Recent Employment"
-  )%>%
-  cols_hide(
-    columns = vars(
-      team_lead, idstring, namestring)
-  )
+White House Senior Staff {.tabset}
+===============================================================================================================
+To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name.
+
+Row {data-height=1000}
+---------------------------------------------------------------------------------------------------------------
+
+### White House Senior Staff
+
+```{r, Include = FALSE}
+ Newstaff_table1 <-staff_data_scraped %>%
+  select(name, title, -link, -idstring)%>%
+  rename(
+    'Name' = name,
+    'Title' = title, 
+    )
+  
+  datatable(Newstaff_table1,
+          rownames = FALSE, 
+          filter = "top", 
+          extensions = 'Buttons',
+          options = list(searchHighlight = TRUE, bpaginate = FALSE, dom = 'Bfrtip',
+                         buttons = c('copy', 'csv', 'excel', 'print')))
+
 
 ```
 
@@ -51,7 +82,7 @@ Agency Review Teams Changes
 ========================================
 To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name. 
 
-Row {data-width=350}
+Row {data-height=1000}
 -----------------------------------------------------------------------
 
 ### Agency Review Teams Changes
@@ -76,6 +107,8 @@ White House Senior Staff
 ========================================
 To filter, click on the boxes at the top of the columns. To sort, use the use/down arrows by the column name. 
 
+Row {data-height=1000}
+
 ### White House Senior Staff
 
 ```{r}
@@ -94,5 +127,6 @@ staffcountcompare %>%
   tab_header(
     title = "Total People Currently Named to Senior Staff vs. Previous Count"
   )
+
 ```
 
