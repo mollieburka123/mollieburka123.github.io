@@ -25,22 +25,8 @@ Row {data-width=650}
 ### Agency Review Teams  
 
 ```{r}
-newnames %>%
-  gt() %>%
-  tab_header(
-    title = "New Names from the Agency Review Team"
-  ) %>%
-  cols_label(
-    name = "Name",
-    agency = "Agency",
-    on_multiple_teams = "On Multiple Teams", 
-    source_of_funding = "Source Of Funding",
-    most_recent_employment = "Most Recent Employment"
-  )%>%
-  cols_hide(
-    columns = vars(
-      team_lead, idstring, namestring)
-  )
+
+newnames
 
 ```
 
